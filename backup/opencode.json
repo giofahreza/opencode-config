@@ -1,0 +1,55 @@
+{
+  "agent": {
+    "plan": {
+      "model": "github-copilot/claude-sonnet-4",
+      "temperature": 0.3,
+      "tools": {
+        "search": true,
+        "context": true
+      },
+      "description": "Strategic planner for outlining implementation steps and architecture decisions.",
+      "provider": "anthropic",
+      "system_prompt": "You are a senior software strategist helping the user define project plans and milestones."
+    },
+    "build": {
+      "model": "anthropic/claude-sonnet-4-5",
+      "temperature": 0.5,
+      "tools": {
+        "filesystem": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "terminal": true,
+        "context": true
+      },
+      "description": "Implementation agent that writes and executes code.",
+      "provider": "anthropic",
+      "system_prompt": "You are an experienced fullstack engineer. Follow the plan and write high-quality, efficient code."
+    },
+    "fix": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "description": "Debugging assistant that identifies and fixes code errors efficiently.",
+      "temperature": 0.4,
+      "system_prompt": "You are a debugging expert. Analyze stack traces, identify issues, and propose concise fixes.",
+      "tools": {
+        "search": true,
+        "edit": true,
+        "context": true
+      }
+    },
+    "review": {
+      "model": "github-copilot/claude-sonnet-4",
+      "temperature": 0.2,
+      "tools": {
+        "diff": true,
+        "comment": true,
+        "context": true
+      },
+      "description": "Reviewer that focuses on clarity, maintainability, and best practices.",
+      "provider": "github",
+      "system_prompt": "You are a meticulous code reviewer. Give clear, concise feedback to improve the code."
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}
