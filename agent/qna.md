@@ -1,7 +1,7 @@
 ---
 description: Q&A Agent - Primary agent for answering questions and providing information
 mode: primary
-model: anthropic/claude-sonnet-4-5
+model: github-copilot/gpt-4.1
 temperature: 0.3
 tools:
   write: false
