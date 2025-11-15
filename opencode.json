@@ -1,0 +1,37 @@
+{
+  "mcp": {
+    "memory-bank": {
+      "type": "local",
+      "command": ["npx", "-y", "@allpepper/memory-bank-mcp"],
+      "environment": {
+        "MEMORY_BANK_ROOT": "/home/giofahreza/.config/opencode/memory-bank"
+      },
+      "enabled": true
+    },
+    "nascoder-terminal-browser": {
+      "type": "local",
+      "command": ["npx", "nascoder-terminal-browser-mcp"],
+      "timeout": 30000,
+      "enabled": true
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "GITHUB_PAT"
+      },
+      "enabled": true
+    },
+    "atlassian": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://mcp.atlassian.com/v1/sse"
+      ],
+      "enabled": true
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}
