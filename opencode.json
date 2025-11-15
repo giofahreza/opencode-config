@@ -1,5 +1,10 @@
 {
   "mcp": {
+    "browser_mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "@browsermcp/mcp@latest"],
+      "enabled": true
+    },
     "memory-bank": {
       "type": "local",
       "command": ["npx", "-y", "@allpepper/memory-bank-mcp"],
@@ -18,7 +23,7 @@
       "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
-        "Authorization": "GITHUB_PAT"
+        "Authorization": "Bearer {pat_here}"
       },
       "enabled": true
     },
